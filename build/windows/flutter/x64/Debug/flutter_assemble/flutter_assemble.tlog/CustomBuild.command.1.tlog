@@ -1,0 +1,28 @@
+^C:\USERS\KATHAN\DESKTOP\FLUTTER\APP\APP_2\BUILD\WINDOWS\CMAKEFILES\422E0208C39319D5EE4FBA8812C2FA3D\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter PROJECT_DIR=C:\Users\KATHAN\Desktop\Flutter\App\app_2 FLUTTER_ROOT=C:\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\KATHAN\Desktop\Flutter\App\app_2\windows\flutter\ephemeral PROJECT_DIR=C:\Users\KATHAN\Desktop\Flutter\App\app_2 FLUTTER_TARGET=C:\Users\KATHAN\Desktop\Flutter\App\app_2\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\KATHAN\Desktop\Flutter\App\app_2\.dart_tool\package_config.json C:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\KATHAN\DESKTOP\FLUTTER\APP\APP_2\BUILD\WINDOWS\CMAKEFILES\AEDA5CF6F44A4BA897A06DFA73A8220C\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\KATHAN\DESKTOP\FLUTTER\APP\APP_2\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/KATHAN/Desktop/Flutter/App/app_2/windows -BC:/Users/KATHAN/Desktop/Flutter/App/app_2/build/windows --check-stamp-file C:/Users/KATHAN/Desktop/Flutter/App/app_2/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
