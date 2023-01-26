@@ -39,37 +39,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transactions> _userTransactions = [
-    Transactions(id: 't1', title: 'Shoes', amount: 3000, date: DateTime.now()),
-    Transactions(
-        id: 't2', title: 'Groceries', amount: 500, date: DateTime.now().subtract(Duration(days: 1))
-        ),
-    Transactions(
-        id: 't2', title: 'Groceries', amount: 500, date: DateTime.now().subtract(Duration(days: 2))
-        ),
-    Transactions(
-        id: 't2', title: 'Groceries', amount: 500, date: DateTime.now().subtract(Duration(days: 3))
-        ),
-    Transactions(
-        id: 't2', title: 'Groceries', amount: 500, date: DateTime.now().subtract(Duration(days: 4))
-        ),
-    Transactions(
-        id: 't2', title: 'Groceries', amount: 500, date: DateTime.now().subtract(Duration(days: 5))
-        ),
-    Transactions(
-        id: 't2', title: 'Groceries', amount: 500, date: DateTime.now().subtract(Duration(days: 6))
-        )
-  ];
+  final List<Transactions> _userTransactions = [];
 
-  void addTxn(String title, String amt) {
+  void addTxn(String title, String amt, DateTime date) {
     setState(() {
       _userTransactions.add(Transactions(
-          id: DateTime.now().toString
-          (),
+          id: DateTime.now().toString(),
           title: title,
           amount: int.parse(amt),
-          date: DateTime.now()));
+          date: date));
     });
+  }
+
+  void deleteTxn(String id) {
+    setState(() {
+  _userTransactions.removeWhere((element) => element.id == id);
+  });
   }
 
   void startAddNewTransaction(BuildContext context) {
@@ -86,9 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Transactions> get recentTransactions {
     return _userTransactions.where((tx) {
-      return tx.date.isAfter(
-        DateTime.now().subtract(Duration(days: 7))
-        );
+      return tx.date.isAfter(DateTime.now().subtract(Duration(days: 7)));
     }).toList();
   }
 
@@ -106,7 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
           child: Column(children: <Widget>[
         Chart(recentTransactions),
-        TransactionList(userTransactions: _userTransactions),
+        TransactionList(
+          userTransactions: _userTransactions,
+          function: deleteTxn),
       ])),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
