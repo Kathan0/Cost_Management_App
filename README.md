@@ -1,4 +1,4 @@
-# app_2
+# Cost Management App
 
 A new Flutter project.
 
